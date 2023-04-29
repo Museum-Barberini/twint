@@ -13,6 +13,7 @@ def Count(count, config):
     msg += "."
     print(msg)
 
+
 def Elastic(elasticsearch):
     if elasticsearch:
         print("[+] Indexing to Elasticsearch @ " + str(elasticsearch))

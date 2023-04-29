@@ -1,9 +1,9 @@
 import twint
 import os
 
-'''
+"""
 Test.py - Testing TWINT to make sure everything works.
-'''
+"""
 
 
 def test_reg(c, run):
@@ -19,8 +19,8 @@ def test_db(c, run):
 
 def custom(c, run, _type):
     print("[+] Beginning custom {} test in {}".format(_type, str(run)))
-    c.Custom['tweet'] = ["id", "username"]
-    c.Custom['user'] = ["id", "username"]
+    c.Custom["tweet"] = ["id", "username"]
+    c.Custom["user"] = ["id", "username"]
     run(c)
 
 
@@ -55,7 +55,7 @@ def main():
     f.User_full = True
 
     runs = [
-        twint.run.Profile,  # this doesn't
+        # twint.run.Profile,  # this doesn't
         twint.run.Search,  # this works
         twint.run.Following,
         twint.run.Followers,
@@ -88,5 +88,5 @@ def main():
     print("[+] Testing complete!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

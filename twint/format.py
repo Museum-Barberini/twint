@@ -1,8 +1,9 @@
 import logging as logme
 
+
 def Tweet(config, t):
     if config.Format:
-        logme.debug(__name__+':Tweet:Format')
+        logme.debug(__name__ + ":Tweet:Format")
         output = config.Format.replace("{id}", t.id_str)
         output = output.replace("{conversation_id}", t.conversation_id)
         output = output.replace("{date}", t.datestamp)
@@ -34,7 +35,7 @@ def Tweet(config, t):
         output = output.replace("{trans_src}", t.trans_src)
         output = output.replace("{trans_dest}", t.trans_dest)
     else:
-        logme.debug(__name__+':Tweet:notFormat')
+        logme.debug(__name__ + ":Tweet:notFormat")
         output = f"{t.id_str} {t.datestamp} {t.timestamp} {t.timezone} "
 
         # TODO: someone who is familiar with this code, needs to take a look at what this is <also see tweet.py>
@@ -55,9 +56,10 @@ def Tweet(config, t):
             output += f" {t.translate} {t.trans_src} {t.trans_dest}"
     return output
 
+
 def User(_format, u):
     if _format:
-        logme.debug(__name__+':User:Format')
+        logme.debug(__name__ + ":User:Format")
         output = _format.replace("{id}", str(u.id))
         output = output.replace("{name}", u.name)
         output = output.replace("{username}", u.username)
@@ -79,7 +81,7 @@ def User(_format, u):
         else:
             output = output.replace("{background_image}", "")
     else:
-        logme.debug(__name__+':User:notFormat')
+        logme.debug(__name__ + ":User:notFormat")
         output = f"{u.id} | {u.name} | @{u.username} | Private: "
         output += f"{u.is_private} | Verified: {u.is_verified} |"
         output += f" Bio: {u.bio} | Location: {u.location} | Url: "

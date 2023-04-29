@@ -2,44 +2,69 @@ import twint
 import schedule
 import time
 
+
 # you can change the name of each "job" after "def" if you'd like.
 def jobone():
-	print ("Fetching Tweets")
-	c = twint.Config()
-	# choose username (optional)
-	c.Username = "insert username here"
-	# choose search term (optional)
-	c.Search = "insert search term here"
-	# choose beginning time (narrow results)
-	c.Since = "2018-01-01"
-	# set limit on total tweets
-	c.Limit = 1000
-	# no idea, but makes the csv format properly
-	c.Store_csv = True
-	# format of the csv
-	c.Custom = ["date", "time", "username", "tweet", "link", "likes", "retweets", "replies", "mentions", "hashtags"]
-	# change the name of the csv file
-	c.Output = "filename.csv"
-	twint.run.Search(c)
+    print("Fetching Tweets")
+    c = twint.Config()
+    # choose username (optional)
+    c.Username = "insert username here"
+    # choose search term (optional)
+    c.Search = "insert search term here"
+    # choose beginning time (narrow results)
+    c.Since = "2018-01-01"
+    # set limit on total tweets
+    c.Limit = 1000
+    # no idea, but makes the csv format properly
+    c.Store_csv = True
+    # format of the csv
+    c.Custom = [
+        "date",
+        "time",
+        "username",
+        "tweet",
+        "link",
+        "likes",
+        "retweets",
+        "replies",
+        "mentions",
+        "hashtags",
+    ]
+    # change the name of the csv file
+    c.Output = "filename.csv"
+    twint.run.Search(c)
+
 
 def jobtwo():
-	print ("Fetching Tweets")
-	c = twint.Config()
-	# choose username (optional)
-	c.Username = "insert username here"
-	# choose search term (optional)
-	c.Search = "insert search term here"
-	# choose beginning time (narrow results)
-	c.Since = "2018-01-01"
-	# set limit on total tweets
-	c.Limit = 1000
-	# no idea, but makes the csv format properly
-	c.Store_csv = True
-	# format of the csv
-	c.Custom = ["date", "time", "username", "tweet", "link", "likes", "retweets", "replies", "mentions", "hashtags"]
-	# change the name of the csv file
-	c.Output = "filename2.csv"
-	twint.run.Search(c)
+    print("Fetching Tweets")
+    c = twint.Config()
+    # choose username (optional)
+    c.Username = "insert username here"
+    # choose search term (optional)
+    c.Search = "insert search term here"
+    # choose beginning time (narrow results)
+    c.Since = "2018-01-01"
+    # set limit on total tweets
+    c.Limit = 1000
+    # no idea, but makes the csv format properly
+    c.Store_csv = True
+    # format of the csv
+    c.Custom = [
+        "date",
+        "time",
+        "username",
+        "tweet",
+        "link",
+        "likes",
+        "retweets",
+        "replies",
+        "mentions",
+        "hashtags",
+    ]
+    # change the name of the csv file
+    c.Output = "filename2.csv"
+    twint.run.Search(c)
+
 
 # run once when you start the program
 
@@ -61,5 +86,5 @@ schedule.every().hour.do(jobtwo)
 # schedule.every().wednesday.at("13:15").do(jobtwo)
 
 while True:
-  schedule.run_pending()
-  time.sleep(1)
+    schedule.run_pending()
+    time.sleep(1)
